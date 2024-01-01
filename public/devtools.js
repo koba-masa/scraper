@@ -1,1 +1,6 @@
-chrome.devtools.panels.create("Scraper", "", "index.html");
+chrome.devtools.panels.elements.createSidebarPane(
+  "CSS Selector",
+  function (sidebar) {
+    sidebar.setPage("index.html");
+  },
+);
