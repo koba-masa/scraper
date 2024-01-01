@@ -1,0 +1,35 @@
+name: CI
+
+on: push
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 21.3
+          cache: pnpm
+
+      - name: Install Package
+        run: |
+          pnpm install
+
+      - name: Prettier
+        run: pnpm prettier
+
+      - name: Lint
+        run: pnpm lint
+
+      - name: Build
+        run: |
+          pnpm build
