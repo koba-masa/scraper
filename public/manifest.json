@@ -3,5 +3,6 @@
   "name": "scraper",
   "description": "",
   "version": "0.1",
+  "permissions": ["activeTab"],
   "devtools_page": "devtools.html"
 }
