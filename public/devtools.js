@@ -1,5 +1,5 @@
 chrome.devtools.panels.elements.createSidebarPane(
-  "CSS Selector",
+  "Scraper",
   function (sidebar) {
     sidebar.setPage("index.html");
   },
