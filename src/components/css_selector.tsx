@@ -4,9 +4,12 @@ export default function CssSelector() {
   const noElementsFoundMessage: Array<string> = ["No elements found."];
 
   const [inputValue, setInputValue] = useState("");
+  const [status, setStatus] = useState("Not send.");
   const [results, setResults] = useState<Array<string>>(noElementsFoundMessage);
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setStatus("Sending...");
+
     const cssSelector = event.target.value;
     setInputValue(cssSelector);
 
@@ -18,7 +21,8 @@ export default function CssSelector() {
     if (!tabId) {
       return;
     }
-    setResults([String(tabId)]);
+
+    setStatus("Done");
   };
 
   return (
@@ -30,6 +34,7 @@ export default function CssSelector() {
           value={inputValue}
           onChange={handleInputChange}
         />
+        <span>{status}</span>
       </div>
       <div>
         {
