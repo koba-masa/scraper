@@ -4,5 +4,14 @@
   "description": "",
   "version": "0.1",
   "permissions": ["activeTab"],
-  "devtools_page": "devtools.html"
+  "devtools_page": "devtools.html",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content_script.js"]
+    }
+  ]
 }

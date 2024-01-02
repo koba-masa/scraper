@@ -22,6 +22,14 @@ export default function CssSelector() {
       return;
     }
 
+    chrome.runtime.sendMessage(
+      {type: 'scraper', tabId: tabId, cssSelector: cssSelector}
+    ).then((response) => {
+      setResults([JSON.stringify(response), "hoge"]);
+    }).catch((error) => {
+      setResults([error.message]);
+    });
+
     setStatus("Done");
   };
 
