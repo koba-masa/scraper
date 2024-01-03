@@ -1,0 +1,28 @@
+.cssSelector {
+    .input {
+        input {
+            margin-left: 10px;
+        }
+    }
+
+    .results {
+        margin: 20px;
+
+        .head {
+            border: 1px solid black;
+            height: 30px;
+            background-color: #D4C9E5;
+        }
+
+        .body {
+            border: 1px solid black;
+            margin-top: -1px;
+            max-height: 300px;
+            overflow: hidden scroll;
+
+            div {
+                margin: 5px 0 5px 20px;
+            }
+        }
+    }
+}
