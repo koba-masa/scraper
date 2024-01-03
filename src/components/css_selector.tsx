@@ -25,7 +25,11 @@ export default function CssSelector() {
     chrome.runtime.sendMessage(
       {type: 'scraper', tabId: tabId, cssSelector: cssSelector}
     ).then((response) => {
-      setResults([JSON.stringify(response), "hoge"]);
+      if (!response.contents) {
+        setResults(noElementsFoundMessage);
+      } else {
+        setResults(response.contents);
+      }
     }).catch((error) => {
       setResults([error.message]);
     });

@@ -11,4 +11,5 @@ chrome.runtime.onMessage.addListener((message, _sender, sendResponse) => {
   sendResponse({
       contents: contents,
   });
+  return true;
 });
