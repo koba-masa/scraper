@@ -40,12 +40,11 @@ export default function CssSelector() {
 
   const [inputValue, setInputValue] = useState("");
   const [results, setResults] = useState<Array<string>>(noElementsFoundMessage);
-  const [isClicked, setIsClicked] = useState(false);
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+
     const cssSelector = event.target.value;
     setInputValue(cssSelector);
-    setIsClicked(false);
 
     if (!cssSelector) {
       return;
@@ -69,12 +68,6 @@ export default function CssSelector() {
     });
   };
 
-  const copy = async() => {
-    const copyText = results.join("\n");
-    await navigator.clipboard.writeText(copyText);
-    setIsClicked(true);
-  }
-
   return (
     <section className="cssSelector">
       <div className="input">
@@ -88,9 +81,6 @@ export default function CssSelector() {
       </div>
       <div className="results">
         <div className="head">
-          <div className="buttonArea">
-            <div className={ isClicked ? 'copyButton clicked' : 'copyButton unclicked' } onClick={copy}></div>
-          </div>
         </div>
         <div className="body">
           {
