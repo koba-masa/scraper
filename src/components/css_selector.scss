@@ -26,3 +26,30 @@
         }
     }
 }
+
+.buttonArea {
+    margin-right: 5px;
+    text-align: right;
+}
+
+.copyButton {
+    display: inline-block;
+    vertical-align: middle;
+    color: #333;
+    line-height: 1;
+    width: 0.9em;
+    height: 0.9em;
+    border: 0.1em solid currentColor;
+    border-radius: 0.1em;
+    box-sizing: content-box;
+    position: relative;
+    box-shadow: -0.2em 0.2em 0 -0.1em #fff, -0.2em 0.2em 0 0 currentColor;
+}
+
+.clicked {
+    background: #000;
+}
+
+.unclicked {
+    background: #fff;
+}
