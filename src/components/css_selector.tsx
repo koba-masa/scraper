@@ -2,41 +2,7 @@ import { useState } from "react";
 import "./css_selector.scss";
 
 export default function CssSelector() {
-  const noElementsFoundMessage: Array<string> = [
-    "No elements found.",
-    "No elements found.",
-    "No elements found.",
-    "No elements found.",
-    "No elements found.",
-    "No elements found.",
-    "No elements found.",
-    "No elements found.",
-    "No elements found.",
-    "No elements found.",
-    "No elements found.",
-    "No elements found.",
-    "No elements found.",
-    "No elements found.",
-    "No elements found.",
-
-    "No elements found.",
-    "No elements found.",
-    "No elements found.",
-    "No elements found.",
-    "No elements found.",
-    "No elements found.",
-    "No elements found.",
-    "No elements found.",
-    "No elements found.",
-    "No elements found.",
-    "No elements found.",
-    "No elements found.",
-    "No elements found.",
-    "No elements found.",
-    "No elements found.",
-    "No elements found.",
-    "No elements found.",
-  ];
+  const noElementsFoundMessage: Array<string> = ["No elements found."];
 
   const [inputValue, setInputValue] = useState("");
   const [results, setResults] = useState<Array<string>>(noElementsFoundMessage);
